@@ -2,7 +2,11 @@
     <h2>Two Way Data Binding</h2>
     <form>
         <input type="text" [(ngModel)]="name" name="name" placeholder="Nome:" />
+        <input type="text" [(ngModel)]="email" name="email" placeholder="email">
         <input type="submit" value="Enviar">
     </form>
-    <p>O nome é: {{name}}</p>
+    <div *ngIf="name !== '' && email!== ''">
+        <p>O nome é: {{name}}</p>
+        <p>Email: {{email}}</p>
+    </div>
 </div>
