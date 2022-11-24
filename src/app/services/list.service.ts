@@ -10,8 +10,8 @@ export class ListService {
 
   constructor(private http: HttpClient) { }
 
-  remove(animals: IAnimal[], animal: IAnimal) {
-    return animals.filter((a) => animal.name !== a.name);
+  remove(id: number) {
+    return this.http.delete<IAnimal>(`${this.apiUrl}/${id}`);
   }
 
   getAll(): Observable<IAnimal[]> {
